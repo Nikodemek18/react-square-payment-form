@@ -3,7 +3,8 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   position: relative;
-  width: 380px;
+  max-width: 380px;
+  width: 100%;
 }
 
 .sq-fieldset {
