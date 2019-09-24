@@ -169,12 +169,13 @@ class SquarePaymentForm extends React.Component<SquarePaymentFormProps, State> {
       this.props.cardNonceResponseReceived(errors, nonce, cardData, billingContact, shippingContact)
       return
     }
-  
+    console.log('cardNonceResponseReceived - cardData, billing, shipping: ', cardData, billingContact, shippingContact);
+    console.log('calling verificationdetails---');
     this.paymentForm && this.paymentForm.verifyBuyer(
       nonce,
       this.props.createVerificationDetails(billingContact, shippingContact),
       (err: [SqError], result: SqVerificationResult) => {
-        console.log('result from verification: ', result);
+        console.log('result from verification details check: ', result);
         this.props.cardNonceResponseReceived(err, nonce, cardData, billingContact, shippingContact, result.token)
       }
     )
