@@ -169,7 +169,7 @@ class SquarePaymentForm extends React.Component<SquarePaymentFormProps, State> {
       this.props.cardNonceResponseReceived(errors, nonce, cardData, billingContact, shippingContact)
       return
     }
-
+  
     this.paymentForm && this.paymentForm.verifyBuyer(
       nonce,
       this.props.createVerificationDetails(billingContact, shippingContact),
