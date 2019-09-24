@@ -17,7 +17,7 @@ export interface SquarePaymentFormProps {
     sandbox: boolean;
     cardNonceResponseReceived: (errors: [SqError], nonce: string, cardData: SqCardData, billingContact: SqContact, shippingContact?: SqContact, buyerVerificationToken?: string) => void;
     createPaymentRequest?: () => SqPaymentRequest;
-    createVerificationDetails?: () => SqVerificationDetails;
+    createVerificationDetails?: (billingContact: SqContact) => SqVerificationDetails;
     methodsSupported?: (methods: SqMethods) => void;
     inputEventReceived?: () => void;
     paymentFormLoaded?: () => void;
