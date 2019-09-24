@@ -1,9 +1,10 @@
 {
   "name": "react-square-payment-form",
-  "version": "0.4.02",
+  "version": "0.4.03",
   "description": "Take payments with Square securely and easily in your React app",
   "main": "lib/index.js",
   "scripts": {
+    "heroku-postbuild": "npm install --only=dev && npm install && npm run build:local",
     "build": "rm -rf ./lib && tsc && npm run copyfiles",
     "copyfiles": "cp src/*.css lib/",
     "prepublish": "npm run lint && npm run test && npm run build",

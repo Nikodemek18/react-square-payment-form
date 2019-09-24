@@ -31,7 +31,7 @@ export interface SquarePaymentFormProps {
   /** <b>Required for digital wallets</b><br/><br/>Invoked when a digital wallet payment button is clicked.*/
   createPaymentRequest?: () => SqPaymentRequest;
   /** <b>Required for SCA</b><br/><br/> */
-  createVerificationDetails?: () => SqVerificationDetails;
+  createVerificationDetails?: (billingContact: SqContact) => SqVerificationDetails;
   /* Triggered when the page renders to decide which, if any, digital wallet button should be rendered in the payment form */
   methodsSupported?: (methods: SqMethods) => void;
   /** Invoked when visitors interact with the iframe elements */
@@ -172,7 +172,7 @@ class SquarePaymentForm extends React.Component<SquarePaymentFormProps, State> {
 
     this.paymentForm && this.paymentForm.verifyBuyer(
       nonce,
-      this.props.createVerificationDetails(),
+      this.props.createVerificationDetails(billingContact),
       (err: [SqError], result: SqVerificationResult) => {
         this.props.cardNonceResponseReceived(err, nonce, cardData, billingContact, shippingContact, result.token)
       }
