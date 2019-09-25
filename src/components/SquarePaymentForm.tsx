@@ -31,7 +31,7 @@ export interface SquarePaymentFormProps {
   /** <b>Required for digital wallets</b><br/><br/>Invoked when a digital wallet payment button is clicked.*/
   createPaymentRequest?: () => SqPaymentRequest;
   /** <b>Required for SCA</b><br/><br/> */
-  createVerificationDetails?: (billingContact?: SqContact, shippingContact?: SqContact) => SqVerificationDetails;
+  createVerificationDetails?: (billingContact: SqContact, shippingContact: SqContact) => SqVerificationDetails;
   /* Triggered when the page renders to decide which, if any, digital wallet button should be rendered in the payment form */
   methodsSupported?: (methods: SqMethods) => void;
   /** Invoked when visitors interact with the iframe elements */
@@ -169,12 +169,14 @@ class SquarePaymentForm extends React.Component<SquarePaymentFormProps, State> {
       this.props.cardNonceResponseReceived(errors, nonce, cardData, billingContact, shippingContact)
       return
     }
-    console.log('cardNonceResponseReceived - cardData, billing, shipping: ', cardData, billingContact, shippingContact);
-    console.log('calling verificationdetails---');
     this.paymentForm && this.paymentForm.verifyBuyer(
       nonce,
       this.props.createVerificationDetails(billingContact, shippingContact),
       (err: [SqError], result: SqVerificationResult) => {
+        if (err) {
+          console.log('error from verification details check: ', err);
+          return this.props.cardNonceResponseReceived(err, nonce, cardData, billingContact, shippingContact, '')
+        }
         console.log('result from verification details check: ', result);
         this.props.cardNonceResponseReceived(err, nonce, cardData, billingContact, shippingContact, result.token)
       }
