@@ -1,19 +1,18 @@
-.sq-payment-form {
+#wyre-dropin-widget-container .sq-payment-form {
   color: #373F4A;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   position: relative;
-  max-width: 380px;
-  width: 100%;
+  width: 380px;
 }
 
-.sq-fieldset {
+#wyre-dropin-widget-container .sq-fieldset {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-.sq-label {
+#wyre-dropin-widget-container .sq-label {
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
@@ -21,7 +20,7 @@
   text-transform: uppercase;
 }
 
-.sq-input {
+#wyre-dropin-widget-container .sq-input {
   box-sizing: border-box;
   border: 1px solid #E0E2E3;
   border-radius: 4px;
@@ -33,16 +32,16 @@
   transition: border-color .2s ease-in-out, background .2s ease-in-out;
 }
 
-.sq-input--focus {
+#wyre-dropin-widget-container .sq-input--focus {
   border: 1px solid #4A90E2;
   background-color: rgba(74,144,226,0.02);
 }
-.sq-input--error {
+#wyre-dropin-widget-container .sq-input--error {
   border: 1px solid #E02F2F;
   background-color: rgba(244,47,47,0.02);
 }
 
-.sq-creditcard {
+#wyre-dropin-widget-container .sq-creditcard {
   width: 100%;
   height: 56px;
   margin-top: 10px;
@@ -63,16 +62,16 @@
   border: 0;
 }
 
-.sq-creditcard:hover {
+#wyre-dropin-widget-container .sq-creditcard:hover {
   background-color: #4281CB;
 }
 
-.sq-error {
+#wyre-dropin-widget-container .sq-error {
   color: red;
   text-align: left;
 }
 
-.sq-divider {
+#wyre-dropin-widget-container .sq-divider {
   height: 24px;
   margin: 24px 0 24px;
   color: #CCC;
@@ -85,16 +84,16 @@
   width: 100%;
 }
 
-.sq-divider-label {
+#wyre-dropin-widget-container .sq-divider-label {
   padding: 0 24px;
   background-color: #FFF;
 }
 
-.sq-divider-hr {
+#wyre-dropin-widget-container .sq-divider-hr {
   margin-top: -12px;
 }
 
-.sq-google-pay {
+#wyre-dropin-widget-container .sq-google-pay {
   width: 100%;
   height: 48px;
   padding: 11px 24px;
@@ -114,7 +113,7 @@
   border: 0;
 }
 
-.sq-masterpass {
+#wyre-dropin-widget-container .sq-masterpass {
   width: 100%;
   height: 48px;
   padding: 0;
@@ -130,7 +129,7 @@
   border: 0;
 }
 
-.sq-apple-pay {
+#wyre-dropin-widget-container .sq-apple-pay {
   width: 100%;
   height: 48px;
   padding: 0;
@@ -146,7 +145,7 @@
   border: 0;
 }
 
-.sq-error-message {
+#wyre-dropin-widget-container .sq-error-message {
   width: 100%;
   margin-top: 16px;
   font-size: 14px;
@@ -156,19 +155,19 @@
   opacity: 0.8;
 }
 
-.sq-form-third {
+#wyre-dropin-widget-container .sq-form-third {
   float: left;
   width: calc((100% - 32px) / 3);
   padding: 0;
   margin: 0 16px 16px 0;
 }
 
-.sq-form-third:last-of-type {
+#wyre-dropin-widget-container .sq-form-third:last-of-type {
   margin-right: 0;
 }
 
 
-.sq-wallet-loading {
+#wyre-dropin-widget-container .sq-wallet-loading {
   background: #E0E2E3;
   border-radius: 6px;
   min-height: 40px;
@@ -177,7 +176,7 @@
   margin-bottom: 10px;
 }
 
-.sq-wallet-loading::after {
+#wyre-dropin-widget-container .sq-wallet-loading::after {
   position: absolute;
   width: 120px;
   height: 6px;
@@ -192,7 +191,7 @@
   content: "";
 }
 
-.sq-wallet-unavailable {
+#wyre-dropin-widget-container .sq-wallet-unavailable {
   background: #FFFFFF;
   border-radius: 6px;
   border: 1px solid #E0E2E3;
